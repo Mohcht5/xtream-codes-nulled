@@ -1,9 +1,11 @@
 # Use an official PHP 5.6 image as the base
 FROM php:5.6-apache
 
+# Update package list first
+RUN apt-get update
+
 # Install necessary dependencies
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt-get install -y \
     software-properties-common \
     curl \
     unzip \
