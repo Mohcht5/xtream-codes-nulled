@@ -1,7 +1,10 @@
 # Use an official PHP 5.6 image as the base
 FROM php:5.6-apache
 
-# Update package list first
+# Ensure that the container can access the necessary repositories
+RUN echo "deb http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" > /etc/apt/sources.list
+
+# Update package list
 RUN apt-get update
 
 # Install necessary dependencies
